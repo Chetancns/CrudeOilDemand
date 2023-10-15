@@ -1,6 +1,7 @@
 {
-  "api": {
-    "target": "http://localhost:5555/", // Replace with the actual URL of your API
-    "secure": false
+  "/api": {
+    "target": "https://crudeoilapi.onrender.com/", // Replace with the actual URL of your API
+    "secure": false,
+    "bypass": "http://localhost:4200"
   }
 }
