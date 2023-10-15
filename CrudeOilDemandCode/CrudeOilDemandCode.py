@@ -53,8 +53,11 @@ for y_pred_train, y_pred_test in zip(gbr.staged_predict(X_train), gbr.staged_pre
     training_losses.append(training_loss)
     test_losses.append(test_loss)
 
+
+
 # Plot the training and test loss
 x_values = np.arange(1, len(training_losses) + 1)
+df_loss = pd.DataFrame({'Iteration':x_values,'training_loss':training_losses,'test_loss':test_losses})
 plt.figure(figsize=(10, 6))
 plt.plot(x_values, training_losses, label="Training Loss", color="blue")
 plt.plot(x_values, test_losses, label="Test Loss", color="red")
@@ -78,6 +81,8 @@ plt.title("feature_importance")
 figManager = plt.get_current_fig_manager()
 figManager.window.state('zoomed')
 plt.show()
+
+df_feature=pd.DataFrame({'feature_names':feature_names,'feature_importance':feature_importance})
 
 #Prediting the demand based on the Trained model
 v_pred = gbr.predict(X_predict)
@@ -103,6 +108,12 @@ plt.show()
 #Dump the predicted output the excel
 out_filepath = ".\\RefDocs\\Output.xlsx"
 df.to_excel(out_filepath,sheet_name='Sheet1',index=False)
+
+out_filepath= ".\\RefDocs\\loss.xlsx"
+df_loss.to_excel(out_filepath,sheet_name='Sheet1',index=False);
+
+out_filepath= ".\\RefDocs\\feature.xlsx"
+df_feature.to_excel(out_filepath,sheet_name='Sheet1',index=False);
 
 # Start the Program to Plot the Country wise Graph
 import show
