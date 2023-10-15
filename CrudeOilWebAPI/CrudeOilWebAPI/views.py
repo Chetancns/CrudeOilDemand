@@ -31,7 +31,7 @@ def get_countrydata():
 
 @app.route('/loss')
 def get_loss():
-    file_loss =r".\CrudeOilWebAPI\RefDocs\loss.xlsx"
+    file_loss =r"./CrudeOilWebAPI/RefDocs/loss.xlsx"
     data = pd.read_excel(file_loss)
     df = pd.DataFrame({'Iteration':data['Iteration'],'training_loss':data['training_loss'],'test_loss':data['test_loss']})
     df_json = df.to_json(orient='records')
@@ -39,7 +39,7 @@ def get_loss():
 
 @app.route('/feature')
 def get_feature():
-    file_feature =r".\CrudeOilWebAPI\RefDocs\feature.xlsx"
+    file_feature =r"./CrudeOilWebAPI/RefDocs/feature.xlsx"
     data=pd.read_excel(file_feature)
     df= pd.DataFrame({'feature_names':data['feature_names'],'feature_importance':data['feature_importance']})
     df_json = df.to_json(orient='records')
