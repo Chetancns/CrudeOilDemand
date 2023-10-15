@@ -4,6 +4,7 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import jsonify, render_template, request
+from flask_cors import cross_origin
 from CrudeOilWebAPI import app
 import pandas as pd
 import os
