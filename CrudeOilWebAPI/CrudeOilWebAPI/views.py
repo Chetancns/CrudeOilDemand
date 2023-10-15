@@ -13,6 +13,7 @@ file_path = r"./CrudeOilWebAPI/RefDocs/Output.xlsx"
 data = pd.read_excel(file_path)
 df = pd.DataFrame({'Country':data['Country'],'Year':data['Year'],'Demand':data['Demand'] })
 @app.route('/')
+@cross_origin()
 def home():
     df_json = df.to_json(orient='records')
     return jsonify({'data': df_json})
