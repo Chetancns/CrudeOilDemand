@@ -20,11 +20,13 @@ def home():
     return jsonify({'data': df_json})
 
 @app.route('/countrynames')
+@cross_origin()
 def get_countrynames():
     country_names= df['Country'].unique()
     return json.dumps(country_names.tolist())
 
 @app.route('/countrydata')
+@cross_origin()
 def get_countrydata():
     name = request.args.get('Name')
     contryData = df[df['Country']==name]
@@ -32,6 +34,7 @@ def get_countrydata():
     return jsonify({'data':df_json})
 
 @app.route('/loss')
+@cross_origin()
 def get_loss():
     file_loss =r"./CrudeOilWebAPI/RefDocs/loss.xlsx"
     data = pd.read_excel(file_loss)
@@ -40,6 +43,7 @@ def get_loss():
     return jsonify({'data':df_json})
 
 @app.route('/feature')
+@cross_origin()
 def get_feature():
     file_feature =r"./CrudeOilWebAPI/RefDocs/feature.xlsx"
     data=pd.read_excel(file_feature)
