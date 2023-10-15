@@ -8,7 +8,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 export class ApiService {
-  private apiUrl = 'http://localhost:5555/';
+  private apiUrl = 'https://crudeoilapi.onrender.com/';
   constructor(private http: HttpClient) { }
   getWorldData() {
     return this.http.get(this.apiUrl);
