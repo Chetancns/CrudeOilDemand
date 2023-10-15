@@ -1,0 +1,30 @@
+header {
+  background-color: cyan; /* Background color for the header */
+  color: black; /* Text color */
+  padding: 2px; /* Adjust padding as needed */
+  text-align: center;
+}
+/* app.component.css */
+.container {
+  display: grid;
+  grid-template-areas: "top-left top-right" "bottom-left bottom-right";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.top-left {
+  grid-area: top-left;
+}
+
+.top-right {
+  grid-area: top-right;
+}
+
+.bottom-left {
+  grid-area: bottom-left;
+}
+
+.bottom-right {
+  grid-area: bottom-right;
+}

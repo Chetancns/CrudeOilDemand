@@ -1,0 +1,18 @@
+<div class="select-container">
+  <label for="DropDown">Select an Country: </label>
+  <select [(ngModel)]="Value" (change)="onDropdownChange($event)" class="select-element">
+    <option *ngFor="let option of Names" [value]="option" class="select-option">{{option}}</option>
+
+  </select>
+</div>
+
+
+<div style="display: block;">
+  <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [legend]="lineChartLegend"
+          [type]="chartType"></canvas>
+</div>
+
