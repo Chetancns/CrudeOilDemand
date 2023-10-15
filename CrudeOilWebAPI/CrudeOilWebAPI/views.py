@@ -9,7 +9,7 @@ import pandas as pd
 import os
 import json
 
-file_path = r".\CrudeOilWebAPI\RefDocs\Output.xlsx"
+file_path = r"./CrudeOilWebAPI/RefDocs/Output.xlsx"
 data = pd.read_excel(file_path)
 df = pd.DataFrame({'Country':data['Country'],'Year':data['Year'],'Demand':data['Demand'] })
 @app.route('/')
